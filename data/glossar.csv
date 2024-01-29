@@ -1,0 +1,38 @@
+﻿Keyword;Description
+covid 19 related words;
+Reproductionrate;The basic reproductive number indicates how many people are infected by an infectious person if no member of the population is immunized against the pathogen. 
+SARS-CoV-2;Name of the virus responsible for the actual pandemic.
+parasite;An organism living from another host organism of mostly another species by deriving nutrients at the host's expense.
+virus;Smallest pathogen that thrives on living tissue in a parasitic relationship. In current SARS-CoV-2 virus is particularly adapted to human cells. After entering a cell, the virus forces it to produce daughter viruses, in order to replicate.
+Covid-19;The lung disease triggered by the SARS-CoV-2-Virus. Is short for Coronavirus Disease plus the year, the disease broke out. Named by the World health organisation WHO.
+epidemic;If a number of people fall ill due to a cause in a limited area within a certain period of time, this is called an epidemic. The term is often used for infectious diseases.
+pandamic;If there is an outbreak of an infectious disease anywhere in the world or across borders of continents and countries, there is talk of a pandemic.
+;
+statistics;
+attack rate;How many people in a population got infected during a certain period during an epidemic? 
+exponential growth;If a number always changes by the same FACTOR in the same time period, then one speaks of exponential growth.If the number of people infected by an outbreak doubles in a certainperiod of time and doubles again after the same amount of time and so on, it's called exponential growth.The curve is getting steeper over time.
+doubling rate;The doubling time describes the time span in which an exponentially growing size (for example the population of a country) doubles.
+linear growth;Linear growth means that the same AMOUNT is always added at the same time intervals.In the event of an outbreak, for example, that would be 500 new patients every day. This results in a straight line in an illustration.
+lethality;"The Percentage value, which refers to the proportion of the deceased in relation toall people suffering from an infection. Because not all Patients can be determined, the number can just be estimated. This is because, numbers depend for example on reliable testing or reporting cases. Further not every infected person has symptoms, thus an exact determination of the value is difficult. An additional mistake that is often made is calculating a value for all patients. Without a legitimate division into, for example, age groups, the determined values additionally distort the depicted reality. If a single value is calculated in the case of Covid-19, its informative value must be questioned, since the risk for young people would be overestimated and underestimated for old people.   
+lethality = diseased patients / infected patients"
+mortality;"Mortality refers to the proportion of deaths in a population who have died from a particular illness.
+mortality = deceased patients / population in the area examined"
+manifestation index;It indicates the probability with which infected people actually get sick and develop symptoms.
+basic reproduction number;How many people are infected by an infected person on average. For example, a base reproduction number of 1 would mean that an infected person infects one other person on average. If the value drops to 0.2, this would mean that on average only a fifth of those infected infect another person. This value is a measure of whether countermeasures need to be taken, in order to avoid new infections. In contrast to the unwieldy figures on the infected, this allows you to make a statement about the current infection process at a glance. 
+Case Fatality Rate;It indicates the proportion of sick, reported patients who die from a specific illness. In the case of COVID-19, an infection.
+;
+activities;
+social distancing;Spatial distance, also spatial separation or physical distance. This means that people should keep a minimum distance from each other in order to reduce the risk of infection. In case of COVID-19, a minimum distance of 1,5 meters was specified.
+lockdown;A curfew. In case of COVID-19, people are only allowed to leave home when necessities such as grocery shopping etc. are pending.
+shutdown;Shutting down the economy and public life. In the case of a shutdown, only people in system-relevant professions generally work.
+contact tracing management;Used to track chains of infection to find, test, and isolate potential patients. Contact management means contacts made by infected people are checked.
+infection fatality rate;It shows the percentage of deaths among all infected, including an estimate of the number of unreported cases, i.e. people who are infected with a pathogen, but who do not notice anything and are not tested.
+Robert Koch Institute;The Robert Koch Institute is an independent German federal authority for infectious diseases and non-communicable diseases. As an institution of public health care, it has an eye on the health of the entire population and is a central research institution in the Federal Republic of Germany.
+;
+immunology;
+immune system;The biological defence system of higher organisms against bacteria and viruses. It protects a body from tissue damage caused by such pathogens by destroying foreign microorganisms, foreign substances or defective cells in the body. In addition to the body's own defense mechanisms, the immune system reacts.
+immunity;Immunity is the biological condition of an organism,in which there are sufficient defense mechanisms against antigens such as viruses or bacteria. If this is the case the affected body has no symptomes anddepending on the pathogen the person is ether not or only under certain conditions contagious. In the case of COVID-19, it is currently not known how long an immunity is effective.
+riskgroup;A specific group of people in the population who are particularly at risk due to common characteristics. In the case of COVID-19, the risk group includes older people aged 65 and over, especially those with chronic illnesses and generally people with chronic illnesses. Chronic diseases include (chronic) respiratory or lung diseases, diabetes, cardiovascular diseases, cancer, hypertension and any diseases and therapies that weaken the immune system.
+herd immunity;If a large part of a population is immune, the risk of infection decreases drastically for this disease. This way you can not only bring the disease under control, it is also possible to protect risk groups in the population. From a proportion of immune people of 70%, one speaks of herd immunity.
+droplet infection;Pathogens that are in the throat or respiratory tract, as is the case with COVID-19, can be transmitted via droplet infections. Sneezing, coughing, speaking or breathing through the mouth cause tiny droplets, the aerosols, to enter the air. In this way, the pathogen can enter the body through inhalation or generally through mucous membranes and body openings.
+smear infection;"Droplets of saliva, for example, can stick to surfaces and contain pathogens that can infect people who have not yet been infected.	"

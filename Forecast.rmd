@@ -1,0 +1,122 @@
+---
+title: "Forecast Report"
+output: html_document
+params:
+  Infected: NA
+  Recovered: NA
+  Deceased: NA
+  Country: NA
+  State: NA
+  DownloadDate: NA
+  ForecastDates: NA
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(tidyverse)
+library(lubridate)
+```
+
+```{r mainpanel, echo=FALSE}
+maintitle <- paste("",params$Country,sep="")
+if(!is.na(params$State))
+  maintitle <- paste("",params$Country," (",params$State,")",sep = "")
+```
+## Forecast Data from `r maintitle`, download on: `r params$DownloadDate`
+This report contains forecast data presented in plots and tables. You can use this data to compare manually, how good the comparison was. To do this, you have to wait until one of the dates has been reached. Then go to the statistics page and compare the predicted values with the actual values. 
+
+### Plot Output
+Hereinafter, the forecast data from the corresponding data are shown in the graphs below:
+```{r Infected, echo=FALSE}
+plot_ly(data = params$Infected)%>%
+  add_lines(x = ~params$ForecastDates, y = ~round(params$Infected$"Point Forecast",digits = 0), color = I("blue"), name = "prediction")%>%
+  add_ribbons(x = ~params$ForecastDates, ymin = ~round(params$Infected$"Lo 95",digits=0), ymax = ~round(params$Infected$"Hi 95", digits = 0), color=I("gray95"), name ="95% confidence")%>%
+  add_ribbons(x = ~params$ForecastDates, ymin = ~round(params$Infected$"Lo 80",digits=0), ymax = ~round(params$Infected$"Hi 80", digits = 0), color=I("gray80"), name ="80% confidence")%>%
+  layout(title="Forecast Infected Cases", xaxis=list(title="Date"),yaxis=list(title="Infected"))
+```
+
+```{r Recovered, echo=FALSE}
+plot_ly(data = params$Recovered)%>%
+  add_lines(x = ~params$ForecastDates, y = ~round(params$Recovered$"Point Forecast",digits = 0), color = I("blue"), name = "prediction")%>%
+  add_ribbons(x = ~params$ForecastDates, ymin = ~round(params$Recovered$"Lo 95",digits=0), ymax = ~round(params$Recovered$"Hi 95", digits = 0), color=I("gray95"), name ="95% confidence")%>%
+  add_ribbons(x = ~params$ForecastDates, ymin = ~round(params$Recovered$"Lo 80",digits=0), ymax = ~round(params$Recovered$"Hi 80", digits = 0), color=I("gray80"), name ="80% confidence")%>%
+  layout(title="Forecast Recovered Cases", xaxis=list(title="Date"),yaxis=list(title="Recovered"))
+```
+
+```{r Deceased, echo=FALSE}
+plot_ly(data = params$Deceased)%>%
+  add_lines(x = ~params$ForecastDates, y = ~round(params$Deceased$"Point Forecast",digits = 0), color = I("blue"), name = "prediction")%>%
+  add_ribbons(x = ~params$ForecastDates, ymin = ~round(params$Deceased$"Lo 95",digits=0), ymax = ~round(params$Deceased$"Hi 95", digits = 0), color=I("gray95"), name ="95% confidence")%>%
+  add_ribbons(x = ~params$ForecastDates, ymin = ~round(params$Deceased$"Lo 80",digits=0), ymax = ~round(params$Deceased$"Hi 80", digits = 0), color=I("gray80"), name ="80% confidence")%>%
+  layout(title="Forecast Deceased Cases", xaxis=list(title="Date"),yaxis=list(title="Deceased"))
+```
+
+### Table Output
+In this segment you will see the data visualized in different tables.
+````{r Preparation, echo = FALSE}
+    dates <- as.Date(params$ForecastDates, origin="1970-01-01")
+    dates <- as.character(dates)
+```
+#### Infected Measures Table
+
+```{r Infected_Table, echo=FALSE}
+plot_ly(type = 'table',
+        header = list(
+          values = c("Date","Infected Mean","Infected Low 80% Confidence","Infected High 80% Confidence","Infected Low 95% Confidence","Infected High 95% Confidence"),
+          align = c("center","center")
+        ),
+        cells = list(
+          values = rbind(
+            dates,
+            round(params$Infected$"Point Forecast", digits = 0),
+            round(params$Infected$"Lo 80", digits = 0),
+            round(params$Infected$"Hi 80", digits = 0),
+            round(params$Infected$"Lo 95", digits = 0),
+            round(params$Infected$"Hi 95", digits = 0)
+          ),
+          align = c('left','center')
+        ))
+```
+
+#### Recovered Measures Table
+
+```{r Recovered_Table, echo=FALSE}
+plot_ly(type = 'table',
+        header = list(
+          values = c("Date","Recovered Mean","Recovered Low 80% Confidence","Recovered High 80% Confidence","Recovered Low 95% Confidence","Recovered High 95% Confidence"),
+          align = c("center","center")
+        ),
+        cells = list(
+          values = rbind(
+            dates,
+            round(params$Recovered$"Point Forecast", digits = 0),
+            round(params$Recovered$"Lo 80", digits = 0),
+            round(params$Recovered$"Hi 80", digits = 0),
+            round(params$Recovered$"Lo 95", digits = 0),
+            round(params$Recovered$"Hi 95", digits = 0)
+          ),
+          align = c('left','center')
+        ))
+```
+
+#### Deceased Measures Table
+
+```{r Deceased_Table, echo=FALSE}
+plot_ly(type = 'table',
+        header = list(
+          values = c("Date","Deceased Mean","Deceased Low 80% Confidence","Deceased High 80% Confidence","Deceased Low 95% Confidence","Deceased High 95% Confidence"),
+          align = c("center","center")
+        ),
+        cells = list(
+          values = rbind(
+            dates,
+            round(params$Deceased$"Point Forecast", digits = 0),
+            round(params$Deceased$"Lo 80", digits = 0),
+            round(params$Deceased$"Hi 80", digits = 0),
+            round(params$Deceased$"Lo 95", digits = 0),
+            round(params$Deceased$"Hi 95", digits = 0)
+          ),
+          align = c('left','center')
+        ))
+```
